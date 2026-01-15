@@ -150,12 +150,31 @@
         }
 
         .about-content {
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1rem;
+            line-height: 1.7;
             color: var(--charcoal);
-            text-align: center;
-            max-width: 800px;   
-            margin: 0 auto; 
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            min-width: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--magenta);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text p {
+            margin-bottom: 1rem;
         }
 
         .blog-post {
@@ -293,10 +312,13 @@
         </div>
     </section>
 
-    <section id="about">
-        <div class="container">
-            <h2>About</h2>
-            <div class="about-content">
+<section id="about">
+    <div class="container">
+        <h2>About</h2>
+        <div class="about-content">
+            <img src="anna.jpg" alt="Anna Synakh" class="profile-photo">
+            <div class="about-text">
+            <img src="IMG_6007.JPG" alt="Anna Synakh" class="profile-photo">
                 <p>I'm Anna, a Ukrainian-American writer and researcher currently navigating the modern cultural ecosystem through cuisines and code.</p>
                 
                 <p>With a master's in Digital Technologies and Policy from UCL and a background in technology research and human-computer interactions, I understand how digital technologies feed and starve us at the same time. And yet, I am one of the starving. Addicted to the empty flavor of social media and yet desperate for something that would actually satisfy me.</p>
@@ -306,9 +328,10 @@
                 <p>I've spent much of my life moving between countries and cultures, and found that food is truly the vessel that brings us together. Feeding and being fed is how we stay connected to our homes hundreds of miles away, and how we build new ones. In this blog, I let my fascination with digital cultures collide with my appreciation of the way ancient traditions are passed down through flavor and seasoning. Hopefully, somewhere in this clash of the old and the new, we can find our humanity.</p>
                 
                 <p>This might be a far-fetched idea. It might lead to something. Either way, I'm writing, cooking, coding, and figuring it out as I go. Come along for the journey.</p>
-            </div>
+           </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="writing">
         <div class="container">
