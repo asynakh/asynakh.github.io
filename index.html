@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna Synakh - Writer & Analyst</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --magenta: #D946A6;
+            --mint: #10B981;
+            --slate: #475569;
+            --charcoal: #1E293B;
+            --cream: #FAF9F6;
+            --light-slate: #64748b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+            background-color: var(--cream);
+        }
+
+        nav {
+            background-color: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--slate);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: var(--magenta);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(217, 70, 166, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.3rem;
+            color: var(--magenta);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.1rem;
+            color: var(--slate);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .social-links .substack {
+            background-color: var(--magenta);
+            color: white;
+        }
+
+        .social-links .substack:hover {
+            background-color: #c23590;
+            transform: translateY(-2px);
+        }
+
+        .social-links .linkedin {
+            background-color: var(--mint);
+            color: white;
+        }
+
+        .social-links .linkedin:hover {
+            background-color: #059669;
+            transform: translateY(-2px);
+        }
+
+        section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: var(--magenta);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            color: var(--slate);
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--charcoal);
+        }
+
+        .blog-post {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--mint);
+        }
+
+        .blog-post h3 {
+            margin-top: 0;
+            color: var(--charcoal);
+        }
+
+        .blog-post .date {
+            color: var(--light-slate);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post .excerpt {
+            color: var(--slate);
+            line-height: 1.8;
+        }
+
+        .blog-post .read-more {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--magenta);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .blog-post .read-more:hover {
+            color: var(--mint);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--light-slate);
+        }
+
+        .empty-state h3 {
+            color: var(--slate);
+        }
+
+        .city-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .city-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: all 0.3s;
+            border-top: 3px solid var(--magenta);
+        }
+
+        .city-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .city-card h4 {
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .city-card .count {
+            color: var(--mint);
+            font-size: 0.9rem;
+        }
+
+        .analysis-card {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--magenta);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--light-slate);
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .tagline {
+                font-size: 1.1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home" onclick="showSection('home')">Home</a></li>
+            <li><a href="#about" onclick="showSection('about')">About</a></li>
+            <li><a href="#writing" onclick="showSection('writing')">Writing</a></li>
+            <li><a href="#analyses" onclick="showSection('analyses')">Quick Analyses</a></li>
+            <li><a href="#restaurants" onclick="showSection('restaurants')">Restaurant Recs</a></li>
+            <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="active">
+        <div class="hero">
+            <h1>Anna Synakh</h1>
+            <p class="tagline">Writer and analyst of consumption</p>
+            <p class="subtitle">Writing about feeding and being fed up</p>
+            <div class="social-links">
+                <a href="https://substack.com/@asynakh" target="_blank" class="substack">Read on Substack</a>
+                <a href="https://www.linkedin.com/in/anna-synakh-94110b190/" target="_blank" class="linkedin">Connect on LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About</h2>
+            <div class="about-content">
+                <p>With a background in technology research and human-computer interactions in the modern world, one would think I can protect myself from the various ways digital technologies harm us. Yet, I am chronically online, and with a quickly wilting attention span.</p>
+                
+                <p>Thus, to resist the wilting, I have decided to bring back a long-lost passion of mine and begin writing again. Creatively.</p>
+                
+                <p>In this blog, I let my fascination with digital cultures be coupled with my love of food and how ancient cultures are passed down through flavour and seasonings. Though this might be a far-fetched idea, it may lead to something.</p>
+                
+                <p>Come along for the journey.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="writing">
+        <div class="container">
+            <h2>Writing</h2>
+            <div class="empty-state">
+                <h3>Coming Soon</h3>
+                <p>New posts will appear here. Check back soon!</p>
+            </div>
+            
+            <!-- TEMPLATE FOR ADDING NEW BLOG POSTS:
+            
+            <div class="blog-post">
+                <h3>Your Post Title Here</h3>
+                <p class="date">January 15, 2026</p>
+                <div class="excerpt">
+                    <p>Your post content or excerpt goes here. You can write as much as you want.</p>
+                    <p>Add multiple paragraphs if needed.</p>
+                </div>
+            </div>
+            
+            Copy the above template and paste it above this comment to add new posts.
+            -->
+        </div>
+    </section>
+
+    <section id="analyses">
+        <div class="container">
+            <h2>Quick Analyses</h2>
+            <div class="empty-state">
+                <h3>Data Visualizations Coming Soon</h3>
+                <p>This space will feature quick analytical pieces and data visualizations.</p>
+            </div>
+            
+            <!-- TEMPLATE FOR ADDING ANALYSES:
+            
+            <div class="analysis-card">
+                <h3>Analysis Title</h3>
+                <p class="date">January 15, 2026</p>
+                <p>Brief description of your analysis...</p>
+                [Add your visualization or chart here]
+            </div>
+            
+            -->
+        </div>
+    </section>
+
+    <section id="restaurants">
+        <div class="container">
+            <h2>Restaurant Recommendations</h2>
+            <p style="color: var(--slate); margin-bottom: 2rem;">My favorite spots across cities I've explored.</p>
+            
+            <div class="city-grid">
+                <div class="city-card">
+                    <h4>New York City</h4>
+                    <p class="count">Coming soon</p>
+                </div>
+                <div class="city-card">
+                    <h4>San Francisco</h4>
+                    <p class="count">Coming soon</p>
+                </div>
+                <div class="city-card">
+                    <h4>Boston</h4>
+                    <p class="count">Coming soon</p>
+                </div>
+                <div class="city-card">
+                    <h4>London</h4>
+                    <p class="count">Coming soon</p>
+                </div>
+                <div class="city-card">
+                    <h4>Paris</h4>
+                    <p class="count">Coming soon</p>
+                </div>
+                <div class="city-card">
+                    <h4>Barcelona</h4>
+                    <p class="count">Coming soon</p>
+                </div>
+            </div>
+            
+            <!-- To add restaurants for a city, create a new section like:
+            
+            <h3>New York City</h3>
+            <div class="blog-post">
+                <h4>Restaurant Name</h4>
+                <p><strong>Neighborhood:</strong> East Village</p>
+                <p><strong>Cuisine:</strong> Italian</p>
+                <p>Your review and why you love it...</p>
+            </div>
+            
+            -->
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="about-content">
+                <p>Find me on <a href="https://substack.com/@asynakh" target="_blank" style="color: var(--magenta);">Substack</a> or connect on <a href="https://www.linkedin.com/in/anna-synakh-94110b190/" target="_blank" style="color: var(--mint);">LinkedIn</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Anna Synakh. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // Handle navigation on page load with hash
+        window.addEventListener('load', function() {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                showSection(hash);
+            }
+        });
+    </script>
+</body>
+</html>
