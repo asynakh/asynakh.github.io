@@ -87,6 +87,89 @@
             max-width: 700px;
             margin: 0 auto 2rem;
         }
+        .hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, rgba(217, 70, 166, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%);
+    position: relative;
+    min-height: 500px;
+    overflow: hidden;
+}
+
+.polaroid {
+    position: absolute;
+    width: 180px;
+    background: white;
+    padding: 10px;
+    padding-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.polaroid:hover {
+    transform: scale(1.05) rotate(0deg) !important;
+    z-index: 10;
+}
+
+.polaroid img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.polaroid-1 {
+    top: 80px;
+    left: 10%;
+    transform: rotate(-8deg);
+}
+
+.polaroid-2 {
+    top: 120px;
+    right: 8%;
+    transform: rotate(6deg);
+}
+
+.polaroid-3 {
+    bottom: 60px;
+    left: 15%;
+    transform: rotate(4deg);
+}
+
+.polaroid-4 {
+    bottom: 80px;
+    right: 12%;
+    transform: rotate(-5deg);
+}
+    .polaroid-5 {
+    top: 70px;
+    right: 12%;
+    transform: rotate(5deg);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+}
+
+@media (max-width: 768px) {
+    .polaroid {
+        width: 120px;
+        padding-bottom: 30px;
+    }
+    
+    .polaroid img {
+        height: 110px;
+    }
+    
+    .polaroid-1, .polaroid-3 {
+        left: 5%;
+    }
+    
+    .polaroid-2, .polaroid-4 {
+        right: 5%;
+    }
+}
 
         .social-links {
             display: flex;
@@ -156,14 +239,14 @@
             display: flex;
             gap: 2rem;
             align-items: flex-start;
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .profile-photo {
-            width: 200px;
-            height: 200px;
-            min-width: 200px;
+            width: 400px;
+            height: 400px;
+            min-width: 400px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--magenta);
@@ -294,12 +377,27 @@
             <li><a href="#home" onclick="showSection('home')">Home</a></li>
             <li><a href="#about" onclick="showSection('about')">About</a></li>
             <li><a href="#writing" onclick="showSection('writing')">Writing</a></li>
-            <li><a href="#analyses" onclick="showSection('analyses')">Quick Analyses</a></li>
-            <li><a href="#restaurants" onclick="showSection('restaurants')">Restaurant Recs</a></li>
+            <li><a href="#analyses" onclick="showSection('analyses')">Analyses</a></li>
+            <li><a href="#restaurants" onclick="showSection('restaurants')">Restaurant Guide</a></li>
             <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
         </ul>
     </nav>
-
+    
+<section id="home" class="active">
+    <div class="hero">
+        <div class="polaroid polaroid-1">
+            <img src="food1.jpg" alt="Food photo">
+        </div>
+        <div class="polaroid polaroid-2">
+            <img src="food2.jpg" alt="Food photo">
+        </div>
+        <div class="polaroid polaroid-3">
+            <img src="food3.jpg" alt="Food photo">
+        </div>
+        <div class="polaroid polaroid-4">
+            <img src="food4.jpg" alt="Food photo">
+        </div>
+        
     <section id="home" class="active">
         <div class="hero">
             <h1>Anna Synakh</h1>
