@@ -62,11 +62,6 @@
             padding: 3rem 2rem;
         }
 
-        .hero {
-            text-align: center;
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, rgba(217, 70, 166, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%);
-        }
 
         .hero h1 {
             font-size: 3rem;
@@ -233,33 +228,33 @@
         }
 
         .about-content {
-            font-size: 1rem;
-            line-height: 1.7;
+            font-size: 0.95rem;
+            line-height: 1.6;
             color: var(--charcoal);
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
             align-items: flex-start;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
         }
-
+        
         .profile-photo {
-            width: 400px;
-            height: 400px;
-            min-width: 400px;
+            width: 300px;
+            height: 300px;
+            min-width: 300px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--magenta);
         }
-
+        
         .about-text {
             flex: 1;
         }
         
         .about-text p {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
-
+        
         .blog-post {
             background: white;
             padding: 2rem;
@@ -377,7 +372,7 @@
             <li><a href="#home" onclick="showSection('home')">Home</a></li>
             <li><a href="#about" onclick="showSection('about')">About</a></li>
             <li><a href="#writing" onclick="showSection('writing')">Writing</a></li>
-            <li><a href="#analyses" onclick="showSection('analyses')">Analyses</a></li>
+            <li><a href="#analysis" onclick="showSection('analysis')">Analysis</a></li>
             <li><a href="#restaurants" onclick="showSection('restaurants')">Restaurant Guide</a></li>
             <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
         </ul>
@@ -457,15 +452,15 @@
         </div>
     </section>
 
-    <section id="analyses">
+    <section id="analysis">
         <div class="container">
-            <h2>Quick Analyses</h2>
+            <h2>Quick analysis</h2>
             <div class="empty-state">
                 <h3>Data Visualizations Coming Soon</h3>
                 <p>This space will feature quick analytical pieces and data visualizations.</p>
             </div>
             
-            <!-- TEMPLATE FOR ADDING ANALYSES:
+            <!-- TEMPLATE FOR ADDING analysis:
             
             <div class="analysis-card">
                 <h3>Analysis Title</h3>
