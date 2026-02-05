@@ -12,12 +12,12 @@
         }
 
         :root {
-            --magenta: #D946A6;
-            --mint: #10B981;
-            --slate: #475569;
+            --terracota: #E35336;
+            --peach: #FFD3AC;
+            --lavender: #9988A1;
             --charcoal: #1E293B;
             --cream: #FAF9F6;
-            --light-slate: #64748b;
+            --earth: #8A2B0E;
         }
 
         body {
@@ -46,14 +46,14 @@
 
         nav a {
             text-decoration: none;
-            color: var(--slate);
+            color: var(--lavender);
             font-weight: 500;
             transition: color 0.3s;
             font-size: 1rem;
         }
 
         nav a:hover {
-            color: var(--magenta);
+            color: var(--terracota);
         }
 
         .container {
@@ -71,14 +71,14 @@
 
         .hero .tagline {
             font-size: 1.3rem;
-            color: var(--magenta);
+            color: var(--terracota);
             font-weight: 500;
             margin-bottom: 1rem;
         }
 
         .hero .subtitle {
             font-size: 1.1rem;
-            color: var(--slate);
+            color: var(--lavender);
             max-width: 700px;
             margin: 0 auto 2rem;
         }
@@ -104,7 +104,7 @@
 }
 
 .polaroid:hover {
-    transform: scale(1.05) translateY(-10px) !important;
+    transform: scale(1.05) tranlavenderY(-10px) !important;
     z-index: 10 !important;
 }
 
@@ -177,23 +177,23 @@
         }
 
         .social-links .substack {
-            background-color: var(--magenta);
+            background-color: var(--terracota);
             color: white;
         }
 
         .social-links .substack:hover {
             background-color: #c23590;
-            transform: translateY(-2px);
+            transform: tranlavenderY(-2px);
         }
 
         .social-links .linkedin {
-            background-color: var(--mint);
+            background-color: var(--peach);
             color: white;
         }
 
         .social-links .linkedin:hover {
             background-color: #059669;
-            transform: translateY(-2px);
+            transform: tranlavenderY(-2px);
         }
 
         section {
@@ -206,18 +206,18 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: tranlavenderY(10px); }
+            to { opacity: 1; transform: tranlavenderY(0); }
         }
 
         h2 {
-            color: var(--magenta);
+            color: var(--terracota);
             font-size: 2.5rem;
             margin-bottom: 2rem;
         }
 
         h3 {
-            color: var(--slate);
+            color: var(--lavender);
             font-size: 1.8rem;
             margin: 2rem 0 1rem;
         }
@@ -240,7 +240,7 @@
                 min-width: 300px;
                 border-radius: 50%;
                 object-fit: cover;
-                border: 4px solid var(--magenta);
+                border: 4px solid var(--terracota);
             }
             
             .about-text {
@@ -257,7 +257,7 @@
             margin-bottom: 2rem;
             border-radius: 12px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-left: 4px solid var(--mint);
+            border-left: 4px solid var(--peach);
         }
 
         .blog-post h3 {
@@ -266,36 +266,36 @@
         }
 
         .blog-post .date {
-            color: var(--light-slate);
+            color: var(--earth);
             font-size: 0.9rem;
             margin-bottom: 1rem;
         }
 
         .blog-post .excerpt {
-            color: var(--slate);
+            color: var(--lavender);
             line-height: 1.8;
         }
 
         .blog-post .read-more {
             display: inline-block;
             margin-top: 1rem;
-            color: var(--magenta);
+            color: var(--terracota);
             text-decoration: none;
             font-weight: 500;
         }
 
         .blog-post .read-more:hover {
-            color: var(--mint);
+            color: var(--peach);
         }
 
         .empty-state {
             text-align: center;
             padding: 4rem 2rem;
-            color: var(--light-slate);
+            color: var(--earth);
         }
 
         .empty-state h3 {
-            color: var(--slate);
+            color: var(--lavender);
         }
 
         .city-grid {
@@ -312,11 +312,11 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             cursor: pointer;
             transition: all 0.3s;
-            border-top: 3px solid var(--magenta);
+            border-top: 3px solid var(--terracota);
         }
 
         .city-card:hover {
-            transform: translateY(-5px);
+            transform: tranlavenderY(-5px);
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
@@ -326,7 +326,7 @@
         }
 
         .city-card .count {
-            color: var(--mint);
+            color: var(--peach);
             font-size: 0.9rem;
         }
 
@@ -336,13 +336,13 @@
             margin-bottom: 2rem;
             border-radius: 12px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-left: 4px solid var(--magenta);
+            border-left: 4px solid var(--terracota);
         }
 
         footer {
             text-align: center;
             padding: 2rem;
-            color: var(--light-slate);
+            color: var(--earth);
             margin-top: 4rem;
         }
 
@@ -481,7 +481,7 @@
     <section id="restaurants">
         <div class="container">
             <h2>Restaurant Recommendations</h2>
-            <p style="color: var(--slate); margin-bottom: 2rem;">My favorite spots across cities I've explored.</p>
+            <p style="color: var(--lavender); margin-bottom: 2rem;">My favorite spots across cities I've explored.</p>
             
             <div class="city-grid">
                 <div class="city-card">
@@ -528,7 +528,7 @@
         <div class="container">
             <h2>Get in Touch</h2>
             <div class="about-content">
-                <p>Find me on <a href="https://substack.com/@asynakh" target="_blank" style="color: var(--magenta);">Substack</a> or connect on <a href="https://www.linkedin.com/in/anna-synakh-94110b190/" target="_blank" style="color: var(--mint);">LinkedIn</a>.</p>
+                <p>Find me on <a href="https://substack.com/@asynakh" target="_blank" style="color: var(--terracota);">Substack</a> or connect on <a href="https://www.linkedin.com/in/anna-synakh-94110b190/" target="_blank" style="color: var(--peach);">LinkedIn</a>.</p>
             </div>
         </div>
     </section>
