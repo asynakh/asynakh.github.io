@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anna Synakh - Researcher & Analyst</title>
+
     <style>
         * {
             margin: 0;
@@ -11,26 +12,47 @@
             box-sizing: border-box;
         }
 
+        /* =================================================
+           COLOR SYSTEM — LAVENDER / EARTH
+           ================================================= */
         :root {
-            --terracota: #E35336;
-            --peach: #FFD3AC;
-            --lavender: #9988A1;
-            --charcoal: #1E293B;
-            --cream: #FAF9F6;
-            --earth: #8A2B0E;
+            --terracotta: #E35336;              /* CTAs only */
+            --earth: #7A2A12;                   /* Authority */
+            --lavender: #9B8FA6;                /* Structure */
+            --lavender-light: #EFEAF3;          /* Section wash */
+            --background: #F7F4F8;              /* PRIMARY BACKGROUND */
+
+            --ink: #3F3A39;
+            --plum: #5E5363;
+            --ink-muted: #8E8395;
+            --white: #FFFFFF;
+
+            --surface: var(--white);
+            --text-primary: var(--ink);
+            --text-secondary: var(--plum);
+            --text-muted: var(--ink-muted);
+
+            --accent-primary: var(--terracotta);
+            --accent-hover: var(--earth);
+
+            --lavender-wash: rgba(155, 143, 166, 0.22);
+            --earth-wash: rgba(122, 42, 18, 0.08);
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: var(--charcoal);
-            background-color: var(--cream);
+            color: var(--text-primary);
+            background-color: var(--background);
         }
 
+        /* =================================================
+           NAVIGATION
+           ================================================= */
         nav {
-            background-color: white;
+            background-color: var(--surface);
             padding: 1.5rem 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -46,121 +68,98 @@
 
         nav a {
             text-decoration: none;
-            color: var(--lavender);
+            color: var(--text-secondary);
             font-weight: 500;
-            transition: color 0.3s;
-            font-size: 1rem;
+            position: relative;
         }
 
         nav a:hover {
-            color: var(--terracota);
+            color: var(--earth);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--earth);
+            transition: width 0.3s ease;
         }
 
-
-        .hero h1 {
-            font-size: 3rem;
-            color: var(--charcoal);
-            margin-bottom: 0.5rem;
+        nav a:hover::after {
+            width: 100%;
         }
 
-        .hero .tagline {
-            font-size: 1.3rem;
-            color: var(--terracota);
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-
-        .hero .subtitle {
-            font-size: 1.1rem;
-            color: var(--lavender);
-            max-width: 700px;
-            margin: 0 auto 2rem;
-        }
+        /* =================================================
+           HERO
+           ================================================= */
         .hero {
             text-align: center;
             padding: 4rem 2rem;
-            background: linear-gradient(135deg, rgba(217, 70, 166, 0.08) 0%, rgba(16, 185, 129, 0.08) 100%);
+            background: linear-gradient(
+                135deg,
+                var(--lavender-wash),
+                var(--earth-wash)
+            );
             position: relative;
             min-height: 500px;
             overflow: hidden;
         }
 
-.polaroid {
-    position: absolute;
-    width: 180px;
-    background: white;
-    padding: 10px;
-    padding-bottom: 40px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-    transition: transform 0.3s ease, z-index 0s;
-    z-index: 1;
-    bottom: -20px;  /* Sits at the bottom edge */
-}
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
 
-.polaroid:hover {
-    transform: scale(1.05) tranlavenderY(-10px) !important;
-    z-index: 10 !important;
-}
+        .hero .tagline {
+            font-size: 1.3rem;
+            color: var(--accent-primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
 
-.polaroid img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-}
+        .hero .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
 
-.polaroid-1 {
-    left: 10%;
-    transform: rotate(-8deg);
-}
+        /* =================================================
+           POLAROIDS
+           ================================================= */
+        .polaroid {
+            position: absolute;
+            width: 180px;
+            background: var(--surface);
+            padding: 10px;
+            padding-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            bottom: -20px;
+        }
 
-.polaroid-2 {
-    left: 25%;
-    transform: rotate(4deg);
-}
+        .polaroid img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
 
-.polaroid-3 {
-    left: 40%;
-    transform: rotate(-3deg);
-}
+        .polaroid-1 { left: 10%; transform: rotate(-8deg); }
+        .polaroid-2 { left: 25%; transform: rotate(4deg); }
+        .polaroid-3 { left: 40%; transform: rotate(-3deg); }
+        .polaroid-4 { left: 55%; transform: rotate(6deg); }
+        .polaroid-5 { left: 70%; transform: rotate(-5deg); }
 
-.polaroid-4 {
-    left: 55%;
-    transform: rotate(6deg);
-}
+        .hero-content {
+            position: relative;
+            z-index: 5;
+        }
 
-.polaroid-5 {
-    left: 70%;
-    transform: rotate(-5deg);
-}
-        
-.hero-content {
-    position: relative;
-    z-index: 5;
-}
-
-@media (max-width: 768px) {
-    .polaroid {
-        width: 100px;
-        padding-bottom: 25px;
-    }
-    
-    .polaroid img {
-        height: 90px;
-    }
-    
-    .polaroid-1 { left: 2%; }
-    .polaroid-2 { left: 20%; }
-    .polaroid-3 { left: 38%; }
-    .polaroid-4 { left: 56%; }
-    .polaroid-5 { left: 74%; }
-}
-
+        /* =================================================
+           SOCIAL LINKS
+           ================================================= */
         .social-links {
             display: flex;
             gap: 1.5rem;
@@ -172,207 +171,146 @@
             padding: 0.75rem 1.5rem;
             border-radius: 8px;
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
+            font-weight: 600;
+            background-color: var(--accent-primary);
+            color: var(--white);
+            box-shadow: 0 2px 6px rgba(227,83,54,0.18);
+            transition: all 0.3s ease;
         }
 
-        .social-links .substack {
-            background-color: var(--terracota);
-            color: white;
+        .social-links a:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
         }
 
-        .social-links .substack:hover {
-            background-color: #c23590;
-            transform: tranlavenderY(-2px);
-        }
-
-        .social-links .linkedin {
-            background-color: var(--peach);
-            color: white;
-        }
-
-        .social-links .linkedin:hover {
-            background-color: #059669;
-            transform: tranlavenderY(-2px);
-        }
-
+        /* =================================================
+           SECTIONS
+           ================================================= */
         section {
             display: none;
-            animation: fadeIn 0.5s;
+            animation: fadeIn 0.5s ease;
         }
 
         section.active {
             display: block;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: tranlavenderY(10px); }
-            to { opacity: 1; transform: tranlavenderY(0); }
+        section:not(#home):nth-child(even) {
+            background-color: var(--lavender-light);
         }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* =================================================
+           TYPOGRAPHY
+           ================================================= */
         h2 {
-            color: var(--terracota);
+            color: var(--earth);
             font-size: 2.5rem;
             margin-bottom: 2rem;
         }
 
         h3 {
-            color: var(--lavender);
+            color: var(--ink);
             font-size: 1.8rem;
             margin: 2rem 0 1rem;
         }
 
-            .about-content {
-                font-size: 0.95rem;
-                line-height: 1.6;
-                color: var(--charcoal);
-                display: flex;
-                gap: 3rem;
-                align-items: flex-start;
-                max-width: 90%;
-                margin: 0 auto;
-                padding: 0 2rem;
-            }
-            
-            .profile-photo {
-                width: 300px;
-                height: 300px;
-                min-width: 300px;
-                border-radius: 50%;
-                object-fit: cover;
-                border: 4px solid var(--terracota);
-            }
-            
-            .about-text {
-                flex: 1;
-            }
-            
-            .about-text p {
-                margin-bottom: 0.8rem;
-            }
-        
+        /* =================================================
+           ABOUT
+           ================================================= */
+        .about-content {
+            display: flex;
+            gap: 3rem;
+            max-width: 90%;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .profile-photo {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--lavender);
+        }
+
+        /* =================================================
+           BLOG POSTS
+           ================================================= */
         .blog-post {
-            background: white;
+            background: var(--surface);
             padding: 2rem;
             margin-bottom: 2rem;
             border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-left: 4px solid var(--peach);
+            border-left: 4px solid var(--lavender);
         }
 
-        .blog-post h3 {
-            margin-top: 0;
-            color: var(--charcoal);
+        .blog-post:hover {
+            border-left-color: var(--earth);
         }
 
-        .blog-post .date {
-            color: var(--earth);
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+        .date {
+            color: var(--text-muted);
         }
 
-        .blog-post .excerpt {
-            color: var(--lavender);
-            line-height: 1.8;
-        }
-
-        .blog-post .read-more {
-            display: inline-block;
-            margin-top: 1rem;
-            color: var(--terracota);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .blog-post .read-more:hover {
-            color: var(--peach);
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 4rem 2rem;
-            color: var(--earth);
-        }
-
-        .empty-state h3 {
-            color: var(--lavender);
-        }
-
+        /* =================================================
+           CITY CARDS
+           ================================================= */
         .city-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 1.5rem;
-            margin-top: 2rem;
         }
 
         .city-card {
-            background: white;
+            background: var(--surface);
             padding: 1.5rem;
             border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            cursor: pointer;
-            transition: all 0.3s;
-            border-top: 3px solid var(--terracota);
+            border-top: 4px solid var(--lavender);
         }
 
-        .city-card:hover {
-            transform: tranlavenderY(-5px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        .city-card h4 {
-            color: var(--charcoal);
-            margin-bottom: 0.5rem;
-        }
-
-        .city-card .count {
-            color: var(--peach);
-            font-size: 0.9rem;
-        }
-
-        .analysis-card {
-            background: white;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-left: 4px solid var(--terracota);
-        }
-
+        /* =================================================
+           FOOTER
+           ================================================= */
         footer {
             text-align: center;
             padding: 2rem;
-            color: var(--earth);
-            margin-top: 4rem;
+            background-color: var(--lavender-light);
+            color: var(--text-muted);
+            border-top: 1px solid var(--lavender);
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero .tagline {
-                font-size: 1.1rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-                font-size: 0.9rem;
+            .about-content {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
 </head>
+
 <body>
-    <nav>
-        <ul>
-            <li><a href="#home" onclick="showSection('home')">Home</a></li>
-            <li><a href="#about" onclick="showSection('about')">About</a></li>
-            <li><a href="#writing" onclick="showSection('writing')">Writing</a></li>
-            <li><a href="#analysis" onclick="showSection('analysis')">Analysis</a></li>
-            <li><a href="#restaurants" onclick="showSection('restaurants')">Restaurant Guide</a></li>
-            <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
-        </ul>
-    </nav>
+
+<nav>
+    <ul>
+        <li><a href="#home" onclick="showSection('home')">Home</a></li>
+        <li><a href="#about" onclick="showSection('about')">About</a></li>
+        <li><a href="#writing" onclick="showSection('writing')">Writing</a></li>
+        <li><a href="#analysis" onclick="showSection('analysis')">Analysis</a></li>
+        <li><a href="#restaurants" onclick="showSection('restaurants')">Restaurant Guide</a></li>
+        <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+    </ul>
+</nav>
     
 <section id="home" class="active">
     <div class="hero">
@@ -533,26 +471,19 @@
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Anna Synakh. All rights reserved.</p>
-    </footer>
+   <footer>
+    <p>&copy; 2026 Anna Synakh. All rights reserved.</p>
+</footer>
 
-    <script>
-        function showSection(sectionId) {
-            document.querySelectorAll('section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
-
-        // Handle navigation on page load with hash
-        window.addEventListener('load', function() {
-            const hash = window.location.hash.substring(1);
-            if (hash) {
-                showSection(hash);
-            }
+<script>
+    function showSection(sectionId) {
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.remove('active');
         });
-    </script>
+        document.getElementById(sectionId).classList.add('active');
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+</script>
+
 </body>
 </html>
