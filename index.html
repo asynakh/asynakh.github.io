@@ -128,36 +128,6 @@
         }
 
         /* =================================================
-           POLAROIDS
-           ================================================= */
-        .polaroid {
-            position: absolute;
-            width: 180px;
-            background: var(--surface);
-            padding: 10px;
-            padding-bottom: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-            bottom: -20px;
-        }
-
-        .polaroid img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-        }
-
-        .polaroid-1 { left: 10%; transform: rotate(-8deg); }
-        .polaroid-2 { left: 25%; transform: rotate(4deg); }
-        .polaroid-3 { left: 40%; transform: rotate(-3deg); }
-        .polaroid-4 { left: 55%; transform: rotate(6deg); }
-        .polaroid-5 { left: 70%; transform: rotate(-5deg); }
-
-        .hero-content {
-            position: relative;
-            z-index: 5;
-        }
-
-        /* =================================================
            SOCIAL LINKS
            ================================================= */
         .social-links {
@@ -310,26 +280,7 @@
         <li><a href="#restaurants" onclick="showSection('restaurants')">Restaurant Guide</a></li>
         <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
     </ul>
-</nav>
-    
-<section id="home" class="active">
-    <div class="hero">
-        <div class="polaroid polaroid-1">
-            <img src="food1.jpg" alt="Food photo">
-        </div>
-        <div class="polaroid polaroid-2">
-            <img src="food2.jpeg" alt="Food photo">
-        </div>
-        <div class="polaroid polaroid-3">
-            <img src="food3.jpeg" alt="Food photo">
-        </div>
-        <div class="polaroid polaroid-4">
-            <img src="food4.jpeg" alt="Food photo">
-        </div>
-        <div class="polaroid polaroid-5">
-            <img src="food5.jpeg" alt="Food photo">
-        </div>
-        
+</nav>    
         <div class="hero-content">
             <h1>Anna Synakh</h1>
             <p class="tagline">Digital Cultures Researcher</p>
@@ -366,6 +317,15 @@
         <div class="container">
             <h2>Writing</h2>
 
+ <div class="blog-post">
+    <h3><a href="blog-post-2.html" style="color: var(--charcoal); text-decoration: none;">Breaking Bread and Isolation: Part I</a></h3>
+    <p class="date">February 13, 2026</p>
+    <div class="excerpt">
+        <p>Building communities and connections has become harder, as we feel more disconnected even from our own emotions and physical sensations. This new research series explores how sharing food and breaking bread could make us just a bit less lonely. The first part of the series introduces the research premise and the methodology behind it.</p>
+        </div>
+    <a href="blog-post-2.html" class="read-more">Read full post →</a>
+</div>
+
              <div class="blog-post">
     <h3><a href="blog-post-1.html" style="color: var(--charcoal); text-decoration: none;">The Thrill of Cooking and Coding</a></h3>
     <p class="date">January 15, 2026</p>
@@ -375,14 +335,6 @@
     <a href="blog-post-1.html" class="read-more">Read full post →</a>
 </div>
             
-        <div class="blog-post">
-    <h3><a href="blog-post-2.html" style="color: var(--charcoal); text-decoration: none;">Breaking Bread and Isolation: Part I</a></h3>
-    <p class="date">February 13, 2026</p>
-    <div class="excerpt">
-        <p>Building communities and connections has become harder, as we feel more disconnected even from our own emotions and physical sensations. This new research series explores how sharing food and breaking bread could make us just a bit less lonely. The first part of the series introduces the research premise and the methodology behind it.</p>
-        </div>
-    <a href="blog-post-1.html" class="read-more">Read full post →</a>
-</div>
             <!-- TEMPLATE FOR ADDING NEW BLOG POSTS:
             
             <div class="blog-post">
@@ -428,11 +380,8 @@
             <div class="city-grid">
                 <div class="city-card">
                     <h4>Boston</h4>
-                    <p class="count">Coming soon</p>
-                </div>
-                <div class="city-card">
-                    <h4>London</h4>
-                    <p class="count">Coming soon</p>
+                    <p class="count">Restaurants: Oak Bistro, Daily Catch, Krasi</p>
+                    <p class="count">Cafes: Elmendorf's Baking Supplies and Cafe, Michette, Cafe Beatrice</p>
                 </div>
                 <div class="city-card">
                     <h4>New York</h4>
@@ -441,16 +390,12 @@
                 <div class="city-card">
                     <h4>Edinburgh</h4>
                     <p class="count">Coming soon</p>
+                 <div class="city-card">
+                    <h4>London</h4>
+                    <p class="count">Restaurants: Ria's, Tatar Bunar, DOPI</p>
+                    <p class="count">Cafes: Miel, Sourdough Sophia, Suba</p>
                 </div>
-                <div class="city-card">
-                    <h4>Paris</h4>
-                    <p class="count">Coming soon</p>
-                </div>
-                <div class="city-card">
-                    <h4>Barcelona</h4>
-                    <p class="count">Coming soon</p>
-                </div>
-            </div>
+
             
             <!-- To add restaurants for a city, create a new section like:
             
