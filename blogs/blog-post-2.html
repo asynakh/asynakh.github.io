@@ -4,59 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Breaking Bread and Isolation – Anna Synakh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        /* =================================================
-           SHARED COLOR SYSTEM (MATCHES MAIN SITE)
-           ================================================= */
         :root {
-            --terracotta: #E35336;              /* CTAs */
-            --earth: #7A2A12;                   /* Authority */
-            --lavender: #9B8FA6;                /* Structure */
-            --lavender-light: #EFEAF3;          /* Section wash */
-            --background: #F7F4F8;              /* Primary background */
-
+            --terracotta: #E35336;
+            --earth: #7A2A12;
+            --lavender: #9B8FA6;
+            --lavender-light: #EFEAF3;
+            --background: #F7F4F8;
             --ink: #3F3A39;
             --plum: #5E5363;
             --ink-muted: #8E8395;
             --white: #FFFFFF;
-
             --surface: var(--white);
-            --text-primary: var(--ink);
-            --text-secondary: var(--plum);
-            --text-muted: var(--ink-muted);
-
-            --accent-primary: var(--terracotta);
-            --accent-hover: var(--earth);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'DM Sans', sans-serif;
             line-height: 1.8;
-            color: var(--text-primary);
+            color: var(--ink);
             background-color: var(--background);
         }
 
-        /* =================================================
-           NAV
-           ================================================= */
+        /* ── NAV ── */
         nav {
             background-color: var(--surface);
-            padding: 1.5rem 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            padding: 1.25rem 2rem;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.06);
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
         .nav-content {
-            max-width: 900px;
+            max-width: 860px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -64,164 +49,200 @@
         }
 
         .back-link {
-            color: var(--text-secondary);
+            color: var(--plum);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
+            font-size: 0.92rem;
+            letter-spacing: 0.02em;
+            transition: color 0.2s;
         }
 
-        .back-link:hover {
-            color: var(--earth);
-        }
+        .back-link:hover { color: var(--earth); }
 
         .site-name {
+            font-family: 'Cormorant Garamond', serif;
             color: var(--earth);
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
+            text-decoration: none;
         }
 
-        /* =================================================
-           ARTICLE
-           ================================================= */
+        /* ── ARTICLE WRAPPER ── */
         article {
-            max-width: 800px;
+            max-width: 720px;
             margin: 4rem auto;
             padding: 0 2rem;
         }
 
+        /* ── POST HEADER (title + subtitle + date) ── */
         .post-header {
             margin-bottom: 3rem;
             padding-bottom: 2rem;
-            border-bottom: 3px solid var(--lavender);
+            border-bottom: 2px solid var(--lavender-light);
         }
 
-        h1 {
-            font-size: 2.5rem;
-            color: var(--ink);
-            margin-bottom: 1rem;
-            line-height: 1.2;
+        .series-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--terracotta);
+            font-weight: 600;
+            margin-bottom: 0.6rem;
         }
 
-      .post-subheader {
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 3px solid var(--ink);
+        .post-header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-weight: 600;
+            color: var(--earth);
+            line-height: 1.15;
+            margin-bottom: 0.3rem;
         }
 
-        h2 {
-            font-size: 2.5rem;
-            color: var(--ink);
-            margin-bottom: 1rem;
-            line-height: 1.2;
+        .post-header .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-style: italic;
+            color: var(--plum);
+            margin-bottom: 0.75rem;
         }
 
         .post-meta {
-            color: var(--text-muted);
-            font-size: 0.95rem;
+            color: var(--ink-muted);
+            font-size: 0.83rem;
+            letter-spacing: 0.04em;
         }
 
-        .post-content {
+        /* ── BODY CONTENT ── */
+        .post-content { font-size: 1rem; color: var(--plum); }
+        .post-content p { margin-bottom: 1.4rem; }
+        .post-content strong { color: var(--ink); font-weight: 600; }
+
+        /* ── SECTION HEADERS (The Writer / The Analyst / Research Methods) ── */
+        .post-content .section-heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--earth);
+            margin: 2.5rem 0 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--lavender-light);
+        }
+
+        /* ── SUBSECTION HEADERS (People / Process / Technology under Research Methods) ── */
+        .post-content .subsection-heading {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--lavender);
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        /* ── RESEARCH QUESTIONS (bullet-style list) ── */
+        .research-questions {
+            list-style: none;
+            margin: 0.25rem 0 1.4rem 0;
+            padding: 0;
+        }
+
+        .research-questions li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.97rem;
+            color: var(--plum);
+            line-height: 1.6;
+        }
+
+        .research-questions li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--lavender);
+        }
+
+        /* ── CITATIONS ── */
+        .citations {
+            margin-top: 3rem;
+            padding: 1.5rem 1.75rem;
+            background: var(--lavender-light);
+            border-radius: 10px;
+            border-left: 3px solid var(--lavender);
+        }
+
+        .citations h2 {
+            font-family: 'Cormorant Garamond', serif;
             font-size: 1.1rem;
-            color: var(--text-secondary);
+            font-weight: 600;
+            color: var(--earth);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
         }
 
-        .post-content p {
-            margin-bottom: 1.5rem;
+        .citations p {
+            font-size: 0.83rem;
+            color: var(--ink-muted);
+            line-height: 1.65;
+            margin-bottom: 0.65rem;
         }
 
-        .post-content strong {
-            color: var(--ink);
-        }
+        .citations p:last-child { margin-bottom: 0; }
 
-        /* =================================================
-           SHARE SECTION
-           ================================================= */
+        /* ── SHARE ── */
         .share-section {
-            margin-top: 4rem;
-            padding: 2rem;
+            margin-top: 3rem;
+            padding: 1.5rem 1.75rem;
             background: var(--surface);
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-left: 4px solid var(--lavender);
+            border-radius: 10px;
+            border-left: 3px solid var(--lavender);
         }
 
         .share-section h3 {
+            font-family: 'Cormorant Garamond', serif;
             color: var(--earth);
             font-size: 1.2rem;
-            margin-bottom: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
         }
 
-        .share-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
+        .share-buttons { display: flex; gap: 0.75rem; flex-wrap: wrap; }
 
         .share-btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
+            padding: 0.55rem 1.2rem;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
             border: none;
             cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s ease;
             color: var(--white);
+            transition: all 0.25s ease;
         }
 
-        .share-btn.twitter {
-            background-color: #1DA1F2;
-        }
+        .share-btn:hover { transform: translateY(-2px); filter: brightness(0.92); }
+        .share-btn.twitter  { background-color: #1DA1F2; }
+        .share-btn.linkedin { background-color: #0A66C2; }
+        .share-btn.substack { background-color: var(--terracotta); }
+        .share-btn.copy     { background-color: var(--lavender); }
+        .share-btn.copied   { background-color: var(--earth); }
 
-        .share-btn.linkedin {
-            background-color: #0A66C2;
-        }
-
-        .share-btn.substack {
-            background-color: var(--accent-primary);
-        }
-
-        .share-btn.copy {
-            background-color: var(--lavender);
-        }
-
-        .share-btn:hover {
-            transform: translateY(-2px);
-            filter: brightness(0.95);
-        }
-
-        .share-btn.copied {
-            background-color: var(--earth);
-        }
-
-        /* =================================================
-           FOOTER
-           ================================================= */
+        /* ── FOOTER ── */
         footer {
             text-align: center;
-            padding: 2rem;
-            color: var(--text-muted);
+            padding: 1.75rem 2rem;
+            color: var(--ink-muted);
             background-color: var(--lavender-light);
-            border-top: 1px solid var(--lavender);
+            border-top: 1px solid rgba(155,143,166,0.3);
             margin-top: 4rem;
+            font-size: 0.85rem;
         }
 
-        /* =================================================
-           RESPONSIVE
-           ================================================= */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            article {
-                margin: 2rem auto;
-            }
-
-            .nav-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
+            article { margin: 2rem auto; }
+            .nav-content { flex-direction: column; gap: 0.75rem; text-align: center; }
         }
     </style>
 </head>
@@ -230,94 +251,92 @@
 
 <nav>
     <div class="nav-content">
-        <a href="index.html" class="back-link">← Back to Blog</a>
-        <div class="site-name">Anna Synakh</div>
+        <a href="../index.html#writing" onclick="sessionStorage.setItem('section','writing')" class="back-link">← Back to Writing</a>
+        <a href="../index.html" class="site-name">Anna Synakh</a>
     </div>
 </nav>
 
 <article>
+
     <div class="post-header">
-        <h1> Breaking Bread and Isolation in the Digital World </h1>
-          <div class="post-subheader">
-        <h2> Part I: Research Premise and Methodology </h2>
-        <div class="post-meta">February 13, 2026</div>
+        <p class="series-label">Research Series · Part I</p>
+        <h1>Breaking Bread and Isolation in the Digital World</h1>
+        <p class="subtitle">Research Premise and Methodology</p>
+        <p class="post-meta">February 13, 2026</p>
     </div>
 
     <div class="post-content">
 
-<p><strong>The Writer</strong></p>
-        <p>When I was a child, my parents cultivated a certain culture around food, which has seeped into my life and is now pulling me on an adventure. You see, for the first decade of my life, they set a high standard for something very simple: a family dinner. The dinner was always held at our round dining table, which had a slit down the middle where one could pull it apart and extend the table for more seating. It almost always involved the four of us: my sister, me, and the two of them. It almost always lasted over an hour. And, most importantly, it almost always served as a way for us to connect through the sharing of food and thoughts. The exchange of platters was just as rapid and sharp as our exchange of opinions and arguments. We stole food, we spewed facts, we came together in some form of a dance of give and take. Until one day my parents took it all, packed it neatly in a container, and shipped it off to the US. </p>
+        <h2 class="section-heading">The Writer</h2>
 
-        <p>My mother moved first. She purchased a new dining table, rectangular and somewhat aggressive in comparison to the one in Ukraine. It was dark and heavy, and the slit in the middle did not hold the crumbs from dinners a decade prior. Our dinners were quieter, with my sister remaining at home, and more distant, with me holding onto resentment. The length and width of the table became oceans and mountains between my parents and me. With my father traveling back and forth, and my mother trying desperately to hold the breadth of the world together, communal dinners became rare. While food was our primary emotional conduit at home, its voltage felt incompatible with our life in the US. From trying to figure out correct peanut butter sandwich proportions to deciding on what to feed the friends I brought home from school so as not to shock them, it all felt wrong. Wrong ingredients, wrong table, wrong place. Throughout the years, piece by piece we breathed life back into our dinners, cultivating the culture of sharing, finding new recipes, bringing new people in. We welcomed change and slowly let go of the expectations of what family dinner had to be. The crowd was ever-changing, the meals new and different. And somewhere along the lines, the dining table gained footprints and handprints of a new life. </p>
+        <p>When I was a child, my parents cultivated a certain culture around food, which has seeped into my life and is now pulling me on an adventure. You see, for the first decade of my life, they set a high standard for something very simple: a family dinner. The dinner was always held at our round dining table, which had a slit down the middle where one could pull it apart and extend the table for more seating. It almost always involved the four of us: my sister, me, and the two of them. It almost always lasted over an hour. And, most importantly, it almost always served as a way for us to connect through the sharing of food and thoughts. The exchange of platters was just as rapid and sharp as our exchange of opinions and arguments. We stole food, we spewed facts, we came together in some form of a dance of give and take. Until one day my parents took it all, packed it neatly in a container, and shipped it off to the US.</p>
 
-        <p>We are all still apart, our locations contracting and expanding across the map like a beating heart, but we all maintain the dinner traditions. My parents host friends and neighbors, and occasionally me, my sister, and our partners. My sister keeps up the tradition in our childhood home at our childhood table, feeding people borscht, offering warmth even in the dead of war-torn winter. For a few years, I too found ways of spreading the dining culture through my community, hosting dinner parties in Boston, and in London in my year abroad. But this year I feel my world closing in, my community in transition, and my passion for dining losing its place. Old friends have moved away, and new ones are busy building a life. I see many people my age face the same predicament. We eat alone, seeing our friends drift away, and tune it our by working or watching TV, stacking one screen on top of the other and pretending we aren’t that alone.  </p>
-       
+        <p>My mother moved first. She purchased a new dining table, rectangular and somewhat aggressive in comparison to the one in Ukraine. It was dark and heavy, and the slit in the middle did not hold the crumbs from dinners a decade prior. Our dinners were quieter, with my sister remaining at home, and more distant, with me holding onto resentment. The length and width of the table became oceans and mountains between my parents and me. With my father traveling back and forth, and my mother trying desperately to hold the breadth of the world together, communal dinners became rare. While food was our primary emotional conduit at home, its voltage felt incompatible with our life in the US. From trying to figure out correct peanut butter sandwich proportions to deciding on what to feed the friends I brought home from school so as not to shock them, it all felt wrong. Wrong ingredients, wrong table, wrong place. Throughout the years, piece by piece we breathed life back into our dinners, cultivating the culture of sharing, finding new recipes, bringing new people in. We welcomed change and slowly let go of the expectations of what family dinner had to be. The crowd was ever-changing, the meals new and different. And somewhere along the lines, the dining table gained footprints and handprints of a new life.</p>
+
+        <p>We are all still apart, our locations contracting and expanding across the map like a beating heart, but we all maintain the dinner traditions. My parents host friends and neighbors, and occasionally me, my sister, and our partners. My sister keeps up the tradition in our childhood home at our childhood table, feeding people borscht, offering warmth even in the dead of war-torn winter. For a few years, I too found ways of spreading the dining culture through my community, hosting dinner parties in Boston, and in London in my year abroad. But this year I feel my world closing in, my community in transition, and my passion for dining losing its place. Old friends have moved away, and new ones are busy building a life. I see many people my age face the same predicament. We eat alone, seeing our friends drift away, and tune it out by working or watching TV, stacking one screen on top of the other and pretending we aren't that alone.</p>
+
         <p>But I think I have reached the point where I can no longer ignore it. I want to continue the tradition of building relationships through food and dining. I want to show the lonely, lovely people around me that we can host and be hosted. Dinner can last hours, and we can laugh and cry, and yell at each other, and at the end of the dinner we can call each other family.</p>
-        
 
-<p><strong>The Analyst</strong></p>
+        <h2 class="section-heading">The Analyst</h2>
 
-        <p>Building that family, and the underlying emotional connection, has become harder than ever, as we feel more disconnected even from our own emotions and physical sensations. Research suggests that screens distract us from emotional and physical cues, which normally would signal fullness or starvation, making us feel an overwhelming numbness when it comes to being in our bodies (Chu 2024; McDaniel 2019; Tabares 2022). Yet, this numbness is addictive and is often cited as a cause for the emerging loneliness epidemic amongst Americans, as it makes it harder to learn about others if you don’t even know yourself (Ross 2024). </p>
+        <p>Building that family, and the underlying emotional connection, has become harder than ever, as we feel more disconnected even from our own emotions and physical sensations. Research suggests that screens distract us from emotional and physical cues, which normally would signal fullness or starvation, making us feel an overwhelming numbness when it comes to being in our bodies (Chu 2024; McDaniel 2019; Tabares 2022). Yet, this numbness is addictive and is often cited as a cause for the emerging loneliness epidemic amongst Americans, as it makes it harder to learn about others if you don't even know yourself (Ross 2024).</p>
 
-        <p>My personal experiences and love of food and dining have inspired this new research venture in which I aim to explore how meal-sharing can counter isolation in the era of digital consumption. This research stream will be divided into three aspects borrowed from my technology market research background: People, Process, and Technology. PPT is a somewhat dated but useful management model used to analyze how people use technologies to improve processes within a system, and how their use of technologies in turn changes the processes (Simon 2019). While PPT is aimed at optimizing outcomes within a corporation (i.e., budgets and revenue), I am using PPT to find optimal ways for us to eat well, spend time together, and feel less lonely. </p>
+        <p>My personal experiences and love of food and dining have inspired this new research venture in which I aim to explore how meal-sharing can counter isolation in the era of digital consumption. This research stream will be divided into three aspects borrowed from my technology market research background: People, Process, and Technology. PPT is a somewhat dated but useful management model used to analyze how people use technologies to improve processes within a system, and how their use of technologies in turn changes the processes (Simon 2019). While PPT is aimed at optimizing outcomes within a corporation (i.e., budgets and revenue), I am using PPT to find optimal ways for us to eat well, spend time together, and feel less lonely.</p>
 
-        <p>Within this framework, I am addressing dining and meal sharing as a technology through which community is built. In the digital world, we have adopted a new meaning of technology that always entails some digital capacity; therefore, my approach may cause an uproar. But, as a part of my program at UCL, I audited a course on Technology and Innovation within the Anthropology department, which taught me to assess technology through the lens of human history of technological advancement. Here, technology is referenced as any tool that was created by humans as an advancement of a particular process (Hobbis 2025). According to classical anthropological and sociological thought, technology is not limited to material and physical being; it can also be used to define innovation around the ways people organize themselves, which dining is at its core. </p>
+        <p>Within this framework, I am addressing dining and meal sharing as a technology through which community is built. In the digital world, we have adopted a new meaning of technology that always entails some digital capacity; therefore, my approach may cause an uproar. But, as a part of my program at UCL, I audited a course on Technology and Innovation within the Anthropology department, which taught me to assess technology through the lens of human history of technological advancement. Here, technology is referenced as any tool that was created by humans as an advancement of a particular process (Hobbis 2025). According to classical anthropological and sociological thought, technology is not limited to material and physical being; it can also be used to define innovation around the ways people organize themselves, which dining is at its core.</p>
 
-<p><strong>Research Methods</strong></p>
-<p>People</p> 
-<p>
-•  Who is most likely to eat alone in contemporary urban environments, and why?
-•  What psychological and social effects are associated with solitary vs. communal eating?
-</p> 
+        <h2 class="section-heading">Research Questions and Methods</h2>
 
-<p>Process</p>
-<p>
-•  What structural conditions enable recurring communal meals (space, time, norms, affordability)?
-•  How have third spaces historically supported community formation?
-•  What design principles make communal rituals sustainable rather than episodic?
-</p>
+        <p class="subsection-heading">People</p>
+        <ul class="research-questions">
+            <li>Who is most likely to eat alone in contemporary urban environments, and why?</li>
+            <li>What psychological and social effects are associated with solitary vs. communal eating?</li>
+        </ul>
 
-<p>Technology</p>
-<p>
-•  How have digital technologies reshaped when, where, and with whom we eat?
-•  Can digital tools facilitate communal dining rather than replace it?
-•  In what ways can meal-sharing be conceptualized as a social technology, and how does it compare to digital alternatives?
-</p>
+        <p class="subsection-heading">Process</p>
+        <ul class="research-questions">
+            <li>What structural conditions enable recurring communal meals (space, time, norms, affordability)?</li>
+            <li>How have third spaces historically supported community formation?</li>
+            <li>What design principles make communal rituals sustainable rather than episodic?</li>
+        </ul>
 
-<p>While this blog is a personal and somewhat informal pursuit, I am aiming for it to be informative and well-researched. I will be evaluating secondary data and publications found through public datasets, government agencies (both US-based and international), as well as various databases accessible through The Boston Library*. Much of the data found thus far is from years spanning prime COVID-19 peaks (2020-2022). This data reflects how people were affected by loneliness, how food intake changed, remote work, exclusion of third spaces, effects of screens on consumption, and more. While it may not be directly reflective of current realities of digital consumption and eating behaviors, it is highly valuable for understanding the effects of loneliness and where our current culture stems from. </p>
+        <p class="subsection-heading">Technology</p>
+        <ul class="research-questions">
+            <li>How have digital technologies reshaped when, where, and with whom we eat?</li>
+            <li>Can digital tools facilitate communal dining rather than replace it?</li>
+            <li>In what ways can meal-sharing be conceptualized as a social technology, and how does it compare to digital alternatives?</li>
+        </ul>
 
-<p>I will use interviews with friends, reflections from dinners I host and attend, and restaurant observations as additional research components, which in turn carry a particular bias. Draw conclusions at your own risk. Much of my research and writing is rooted in personal observations, and I will continue to weave it through future posts, as once again, this blog is just as much an exploration and learning experience for me, as it is a research project.</p>
+        <p>While this blog is a personal and somewhat informal pursuit, I am aiming for it to be informative and well-researched. I will be evaluating secondary data and publications found through public datasets, government agencies (both US-based and international), as well as various databases accessible through The Boston Library. Much of the data found thus far is from years spanning prime COVID-19 peaks (2020–2022). This data reflects how people were affected by loneliness, how food intake changed, remote work, exclusion of third spaces, effects of screens on consumption, and more. While it may not be directly reflective of current realities of digital consumption and eating behaviors, it is highly valuable for understanding the effects of loneliness and where our current culture stems from.</p>
 
-<p>For that same reason, I will be utilizing AI tools, both chatbots and agents, as I would like to gain hands-on understanding of how they function and how they can be made useful in a research setting. I use them as research assistants, code and writing editors, and am exploring where I may insert automated workflows for data collection, or any other optimization.</p>
+        <p>I will use interviews with friends, reflections from dinners I host and attend, and restaurant observations as additional research components, which in turn carry a particular bias. Draw conclusions at your own risk. Much of my research and writing is rooted in personal observations, and I will continue to weave it through future posts, as once again, this blog is just as much an exploration and learning experience for me, as it is a research project.</p>
 
-<p>This research is exploratory. More than anything, I want to find out how food can make us disconnect digitally and build more connections in the physical world. If this research becomes helpful to others, well, that is just a bonus. </p>
+        <p>For that same reason, I will be utilizing AI tools, both chatbots and agents, as I would like to gain hands-on understanding of how they function and how they can be made useful in a research setting. I use them as research assistants, code and writing editors, and am exploring where I may insert automated workflows for data collection, or any other optimization.</p>
 
+        <p>This research is exploratory. More than anything, I want to find out how food can make us disconnect digitally and build more connections in the physical world. If this research becomes helpful to others, well, that is just a bonus.</p>
 
-<p><strong>Citations</strong></p>
+    </div>
 
-<p>Chu, Jonathan et al. “Screen time, problematic screen use, and eating disorder symptoms among early adolescents: findings from the Adolescent Brain Cognitive Development (ABCD) Study.” Eating and weight disorders : EWD vol. 29,1 57. 4 Sep. 2024, doi:10.1007/s40519-024-01685-1</p>
-
-<p>Hobbis, Geoffrey, and Stephanie Ketterer . 2025. “Technology”. In The Open Encyclopedia of Anthropology, edited by Hanna Nieber. Online: http://doi.org/10.29164/25technology</p>
-
-<p>McDaniel, Brandon T., and Michelle Drouin. “Daily Technology Interruptions and Emotional and Relational Well-Being.” Computers in Human Behavior, vol. 99, 2019, pp. 1–8. </p>
-
-<p>Ross, Elizabeth M. “What Is Causing Our Epidemic of Loneliness and How Can We Fix It?” Usable Knowledge, Harvard Graduate School of Education, 25 Oct. 2024, www.gse.harvard.edu/ideas/usable-knowledge/24/10/what-causing-our-epidemic-loneliness-and-how-can-we-fix-it</p>
-
-<p>Simon, Becky. “Everything You Need to Know about the People, Process, Technology Framework.” Smartsheet, 14 June 2019 (updated 19 July 2021), www.smartsheet.com/content/people-process-technology</p>
-
-<p>Tabares-Tabares, Marcela et al. “Screen use during food consumption: Does it cause increased food intake? A systematic review.” Appetite vol. 171 (2022): 105928. doi:10.1016/j.appet.2022.105928</p>
-
-</div>
+    <div class="citations">
+        <h2>Citations</h2>
+        <p>Chu, Jonathan et al. "Screen time, problematic screen use, and eating disorder symptoms among early adolescents: findings from the Adolescent Brain Cognitive Development (ABCD) Study." <em>Eating and Weight Disorders</em> vol. 29,1 57. 4 Sep. 2024, doi:10.1007/s40519-024-01685-1</p>
+        <p>Hobbis, Geoffrey, and Stephanie Ketterer. 2025. "Technology." In <em>The Open Encyclopedia of Anthropology</em>, edited by Hanna Nieber. http://doi.org/10.29164/25technology</p>
+        <p>McDaniel, Brandon T., and Michelle Drouin. "Daily Technology Interruptions and Emotional and Relational Well-Being." <em>Computers in Human Behavior</em>, vol. 99, 2019, pp. 1–8.</p>
+        <p>Ross, Elizabeth M. "What Is Causing Our Epidemic of Loneliness and How Can We Fix It?" <em>Usable Knowledge</em>, Harvard Graduate School of Education, 25 Oct. 2024.</p>
+        <p>Simon, Becky. "Everything You Need to Know about the People, Process, Technology Framework." <em>Smartsheet</em>, 14 June 2019 (updated 19 July 2021).</p>
+        <p>Tabares-Tabares, Marcela et al. "Screen use during food consumption: Does it cause increased food intake? A systematic review." <em>Appetite</em> vol. 171 (2022): 105928. doi:10.1016/j.appet.2022.105928</p>
+    </div>
 
     <div class="share-section">
         <h3>Share this post</h3>
         <div class="share-buttons">
-            <a href="https://twitter.com/intent/tweet?text=The%20Thrill%20of%20Cooking%20and%20Coding&url=https://asynakh.github.io/blog-post-2.html" target="_blank" class="share-btn twitter">Share on X</a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://asynakh.github.io/blog-post-2.html" target="_blank" class="share-btn linkedin">Share on LinkedIn</a>
+            <a href="https://twitter.com/intent/tweet?text=Breaking%20Bread%20and%20Isolation&url=https://asynakh.github.io/blogs/blog-post-2.html" target="_blank" class="share-btn twitter">Share on X</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://asynakh.github.io/blogs/blog-post-2.html" target="_blank" class="share-btn linkedin">Share on LinkedIn</a>
             <a href="https://substack.com/@asynakh" target="_blank" class="share-btn substack">Follow on Substack</a>
             <button onclick="copyLink()" class="share-btn copy" id="copyBtn">Copy Link</button>
         </div>
     </div>
+
 </article>
 
 <footer>
@@ -326,12 +345,10 @@
 
 <script>
     function copyLink() {
-        const url = window.location.href;
-        navigator.clipboard.writeText(url).then(() => {
+        navigator.clipboard.writeText(window.location.href).then(() => {
             const btn = document.getElementById('copyBtn');
             btn.textContent = 'Link Copied!';
             btn.classList.add('copied');
-
             setTimeout(() => {
                 btn.textContent = 'Copy Link';
                 btn.classList.remove('copied');
