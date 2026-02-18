@@ -456,38 +456,9 @@
             </a>
 
             <a href="https://substack.com/@asynakh" target="_blank" class="work-card">
-                <p class="work-label">Introduction</p>
+                <p class="work-label">Substack</p>
                 <h4>The Thrill of Cooking and Coding</h4>
                 <p>An introduction to what this blog is and why it exists.</p>
-            </a>
-
-            <a href="https://www.forrester.com/blogs/navigating-challenges-and-optimizing-performance-in-the-public-sector-with-tier" target="_blank" class="work-card">
-                <p class="work-label">Research</p>
-                <h4>Navigating Challenges In The Public Sector with Tech Insights and Econometric Research </h4>
-                <p>An overview of research we conducted on workforce management, budgeting, and investment trends across public-sector agencies in the US. </p>
-            </a>
-            <a href="https://www.forrester.com/blogs/navigating-challenges-and-optimizing-performance-in-the-public-sector-with-tier" target="_blank" class="work-card">
-                <p class="work-label">Webinar</p>
-                <h4>Practical Activities for Culture Change </h4>
-                <p>A recording of the webinar I had co-led, which helped clients define the culture change cycle and identify points of impact. </p>
-            </a>
-            
-             <a href="https://www.forrester.com/blogs/byoai-is-here-make-the-right-moves-to-benefit-from-it" target="_blank" class="work-card">
-                <p class="work-label">Research</p>
-                <h4>BYOAI - Navigating AI Usage at Work </h4>
-                <p>Independent of company policies, employees are using AI exactly how they want to. This research explores how letting employees take the lead can benefit organizations. </p>
-            </a>
-            
-            <a href="https://cepa.org/article/missing-from-the-pittsburgh-agenda/" target="_blank" class="work-card">
-                <p class="work-label">Research</p>
-                <h4>Missing From The Pittsburgh Agenda</h4>
-                <p>On the launch of the Trade and Technology Council.</p>
-            </a>
-            
-            <a href="https://www.the-college-reporter.com/op-ed-first-three-days-from-a-ukrainian-american/2022/03/" target="_blank" class="work-card">
-                <p class="work-label">Opinion</p>
-                <h4>First Three Days: A Ukrainian-American Perspective</h4>
-                <p> My family's experience of Russia's full-scale invasion of Ukraine.</p>
             </a>
 
             <!-- Placeholder — replace href and content when you have more work -->
@@ -699,8 +670,14 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Show home on load
-    showSection('home');
+    // If returning from a blog post, open the section stored in sessionStorage
+    const saved = sessionStorage.getItem('section');
+    if (saved) {
+        sessionStorage.removeItem('section');
+        showSection(saved);
+    } else {
+        showSection('home');
+    }
 </script>
 
 </body>
